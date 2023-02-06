@@ -1,6 +1,6 @@
 # Getting started with Timesync API testing with Serenity and Cucumber 6
 
-This is a simple starter project for Serenity with Cucumber 6 and RestAssured
+This is a starter capstone project (Timesync) for Serenity with Cucumber 6 and RestAssured
 
 ## Test Case Documentation
 For more testcases by QE, you can read the [**Test Cases WEB and API**]:
