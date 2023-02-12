@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.timesync.TimesyncAPI;
+import starter.timesync.TimesyncAPIAdmin;
 import starter.timesync.Utils.Constant;
 import starter.timesync.Utils.TimesyncResponse;
 import java.io.File;
@@ -16,17 +16,17 @@ import static org.junit.Assert.assertEquals;
 public class CreateEmployeeStepDef {
 
     @Steps
-    TimesyncAPI timesyncAPI;
+    TimesyncAPIAdmin timesyncAPIAdmin;
 
     @Given("Admin create employee with valid json")
     public void createEmployeeValidJson(){
         File json = new File(Constant.JSON_REQUEST+"/RegisterEmployee.json");
-        timesyncAPI.postCreateEmployees(json);
+        timesyncAPIAdmin.postCreateEmployees(json);
     }
 
     @When("Send request post create employee")
     public void sendRequestRegisterEmployee(){
-        SerenityRest.when().post(TimesyncAPI.POST_CREATE_EMPLOYEE);
+        SerenityRest.when().post(TimesyncAPIAdmin.POST_CREATE_EMPLOYEE);
     }
 
     @And("Response body message should be email: \"email already registered\"")
@@ -55,12 +55,12 @@ public class CreateEmployeeStepDef {
     @Given("Admin create employees with file csv")
     public void createEmployeesByCsv(){
         File csv = new File(Constant.CSV_REQUEST+"/TimeSyncNewUser.csv");
-        timesyncAPI.postCreateEmployeesCsv(csv);
+        timesyncAPIAdmin.postCreateEmployeesCsv(csv);
     }
 
     @When("Send request create employee by csv")
     public void sendRequestRegisterEmployeeCsv(){
-        SerenityRest.when().post(TimesyncAPI.CREATE_EMPLOYEES_CSV);
+        SerenityRest.when().post(TimesyncAPIAdmin.CREATE_EMPLOYEES_CSV);
     }
 
     @And("Response body message put should be status: \"success create account from csv\"")
@@ -74,7 +74,7 @@ public class CreateEmployeeStepDef {
     @Given("Admin create employees with file other than csv")
     public void createEmployeesOtehrThanCsv(){
         File csv = new File(Constant.IMAGE_REQUEST+"/pic6.jpg");
-        timesyncAPI.postCreateEmployeesCsv(csv);
+        timesyncAPIAdmin.postCreateEmployeesCsv(csv);
     }
 
     @And("Response body message should be status: \"validate: file type error, only csv can be upload\"")

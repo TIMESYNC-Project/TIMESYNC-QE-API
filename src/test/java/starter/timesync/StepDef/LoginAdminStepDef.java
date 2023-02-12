@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.timesync.TimesyncAPI;
+import starter.timesync.TimesyncAPIAdmin;
 import starter.timesync.Utils.Constant;
 import starter.timesync.Utils.TimesyncResponse;
 import java.io.File;
@@ -15,17 +15,17 @@ import static org.junit.Assert.assertEquals;
 public class LoginAdminStepDef {
 
     @Steps
-    TimesyncAPI timesyncAPI;
+    TimesyncAPIAdmin timesyncAPIAdmin;
 
     @Given("Login admin with valid json")
     public void loginAdminValidJson(){
         File json = new File(Constant.JSON_REQUEST+"/LoginAdmin.json");
-        timesyncAPI.postLoginAdmin(json);
+        timesyncAPIAdmin.postLoginAdmin(json);
     }
 
     @When("Send request post login admin")
     public void sendRequestLoginAdmin(){
-        SerenityRest.when().post(TimesyncAPI.POST_LOGIN_ADMIN);
+        SerenityRest.when().post(TimesyncAPIAdmin.POST_LOGIN_ADMIN);
     }
 
     @And("Response body message should be status: \"success login\"")
@@ -48,7 +48,7 @@ public class LoginAdminStepDef {
     @Given("Login admin with invalid json")
     public void loginAdminInvalidJson(){
         File json = new File(Constant.JSON_REQUEST+"/LoginAdminInvalid.json");
-        timesyncAPI.postLoginAdmin(json);
+        timesyncAPIAdmin.postLoginAdmin(json);
     }
 
     @And("Response body message should be status: \"password not match\"")

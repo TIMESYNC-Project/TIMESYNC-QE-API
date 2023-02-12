@@ -21,3 +21,19 @@ Feature: Announcements List for Employees
       | 30 |
       | 31 |
       | 32 |
+
+  @Timesync @NegativeCase
+  Scenario Outline: Admin can't get announcements unregistered id
+    Given GET Announcements by id <id>
+    When Send request get announcements by id
+    Then Should return status code 404
+    And Response body message get should be status: "announcement not found"
+    And Validate json schema announcements unregistered id
+    Examples:
+      | id |
+      | 60 |
+      | 61 |
+      | 62 |
+      | 63 |
+      | 64 |
+      | 65 |

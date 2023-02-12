@@ -1,4 +1,4 @@
-Feature: Apporvals Admin
+Feature: Approvals Admin
 
   @Timesync @PositiveCase
   Scenario: Admin can see approvals from employees
@@ -33,16 +33,31 @@ Feature: Apporvals Admin
 #PUT
   
   @Timesync @PositiveCase
-  Scenario: Admin can update approvals request from employees 
-    Given PUT update approvals employee ID 81 with approval status "Approved"
+  Scenario Outline: Admin can update approvals request from employees
+    Given PUT update approvals employee ID <id> with approval status "<status>"
     When Send request update approvals employees
     Then Should return status code 200
     And Response body message update approvals should be: "success approve employee permission"
     And Validate json schema update approvals employees
+    Examples:
+      | id | status   |
+      | 52 | Approved |
+      | 53 | Rejected |
+      | 54 | Approved |
+      | 55 | Approved |
+      | 56 | Rejected |
+
 
   @Timesync @NegativeCase
-  Scenario: Admin can't update approvals request from employees unknown ID
-    Given PUT update approvals employee ID 999 with approval status "Approved"
+  Scenario Outline: Admin can't update approvals request from employees unknown ID
+    Given PUT update approvals employee ID <id> with approval status "<status>"
     When Send request update approvals employees
     Then Should return status code 500
     And Response body message update approvals another case should be: "unable to process data"
+    Examples:
+      | id  | status   |
+      | 995 | Approved |
+      | 996 | Rejected |
+      | 997 | Approved |
+      | 998 | Approved |
+      | 999 | Rejected |

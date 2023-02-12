@@ -1,10 +1,10 @@
 {
-  "name": "Nekko Nami",
+  "name": "Erik ten Hag",
   "birth_of_date": "1998-09-16",
-  "email": "nekkonami@gmail.com",
-  "gender": "Female",
-  "position": "Frontend Engineer",
-  "phone": "089522337481",
-  "address": "Jogja",
+  "email": "tenhag@gmail.com",
+  "gender": "Male",
+  "position": "Engineer Manager",
+  "phone": "089522336321",
+  "address": "Netherlands",
   "password": "112233"
 }
