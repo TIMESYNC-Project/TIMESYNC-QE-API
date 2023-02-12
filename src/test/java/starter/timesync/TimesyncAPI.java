@@ -19,6 +19,9 @@ public class TimesyncAPI {
     public static String GET_LIST_EMPLOYEES = Constant.BASE_URL + "/employees";
     public static String GET_SINGLE_EMPLOYEES = Constant.BASE_URL + "/employees/{id}";
     public static String GET_PUT_COMPANY_PROFILES = Constant.BASE_URL + "/companies";
+    public static String GET_PUT_SETTING = Constant.BASE_URL + "/setting";
+    public static String GET_LIST_APPROVALS_EMPLOYEES = Constant.BASE_URL + "/approvals";
+    public static String GET_PUT_APPROVALS_EMPLOYEES = Constant.BASE_URL + "/approvals/{id}";
 
 
 
@@ -31,6 +34,9 @@ public class TimesyncAPI {
 
     @Step("Get list users")
     public void getListEmployees(){
+        SerenityRest.given();
+    }@Step("Get list users")
+    public void getApproveEmployeesWoToken(){
         SerenityRest.given();
     }
 
@@ -60,6 +66,29 @@ public class TimesyncAPI {
         SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
                         ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
                         ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .log().all();
+    }
+
+    @Step("Get setting employee")
+    public void getSettingEmployees(){
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                        ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .log().all();
+    }
+
+    @Step("Get approvals employee")
+    public  void getApprovalsEmployees(){
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU").log().all();
+    }
+    @Step("Get approvals employee")
+    public  void getApprovalsEmployeesWithId(int id){
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .pathParam("id", id)
                 .log().all();
     }
 
@@ -142,5 +171,28 @@ public class TimesyncAPI {
                 .multiPart("company_address",company_address)
                 .multiPart("company_phone",company_phone)
                 .multiPart("sosmed",sosmed);
+    }
+
+    @Step("Put update setting employee")
+    public void setUpdateSettingEmployees(String working_hour_start, String working_hour_end, String tolerance,
+                                         String annual_leave) {
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                        ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .multiPart("working_hour_start",working_hour_start)
+                .multiPart("working_hour_end",working_hour_end)
+                .multiPart("tolerance",tolerance)
+                .multiPart("annual_leave",annual_leave)
+                .log().all();
+    }
+
+    @Step("Put update approvals employee")
+    public void setUpdaApprovalsEmployee(int id, String approval_status){
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                        ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .pathParam("id", id)
+                .formParam("file",approval_status)
+                .log().all();
     }
 }

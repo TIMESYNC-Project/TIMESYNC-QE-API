@@ -69,4 +69,18 @@ public class CreateEmployeeStepDef {
         String actualMessage = SerenityRest.then().extract().path(TimesyncResponse.MESSAGE);
         assertEquals(expectedMessage, actualMessage);
     }
+
+    //Scenario NegCase
+    @Given("Admin create employees with file other than csv")
+    public void createEmployeesOtehrThanCsv(){
+        File csv = new File(Constant.IMAGE_REQUEST+"/pic6.jpg");
+        timesyncAPI.postCreateEmployeesCsv(csv);
+    }
+
+    @And("Response body message should be status: \"validate: file type error, only csv can be upload\"")
+    public void responseBodyErrorFile(){
+        String expectedMessage = "validate: file type error, only csv can be upload";
+        String actualMessage = SerenityRest.then().extract().path(TimesyncResponse.MESSAGE);
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
