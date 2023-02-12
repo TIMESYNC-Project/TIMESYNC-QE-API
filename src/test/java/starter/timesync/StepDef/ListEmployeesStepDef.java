@@ -2,12 +2,11 @@ package starter.timesync.StepDef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.timesync.TimesyncAPI;
+import starter.timesync.TimesyncAPIAdmin;
 import starter.timesync.Utils.Constant;
 
 import java.io.File;
@@ -15,17 +14,17 @@ import java.io.File;
 public class ListEmployeesStepDef {
 
     @Steps
-    TimesyncAPI timesyncAPI;
+    TimesyncAPIAdmin timesyncAPIAdmin;
 
     @Given("GET list all employees by admin")
     public void getListEmployees() {
         SerenityRest.given();
-        timesyncAPI.getListEmployees();
+        timesyncAPIAdmin.getListEmployees();
     }
 
     @When("Send request get list employees")
     public void sendRequestGetListEmployees() {
-        SerenityRest.when().get(TimesyncAPI.GET_LIST_EMPLOYEES);
+        SerenityRest.when().get(TimesyncAPIAdmin.GET_LIST_EMPLOYEES);
     }
 
 
@@ -40,12 +39,12 @@ public class ListEmployeesStepDef {
     //Scenario 2
     @Given("GET employee with valid id {int}")
     public void getSingleUserWithId(int id){
-        timesyncAPI.getEmployeeId(id);
+        timesyncAPIAdmin.getEmployeeId(id);
     }
 
     @When("Send request get single user")
     public void sendRequestGetSingleUser(){
-        SerenityRest.when().get(TimesyncAPI.GET_SINGLE_EMPLOYEES);
+        SerenityRest.when().get(TimesyncAPIAdmin.GET_SINGLE_EMPLOYEES);
     }
 
     @And("Validate json schema single employee")

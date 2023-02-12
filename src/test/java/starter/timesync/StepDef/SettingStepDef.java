@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.timesync.TimesyncAPI;
+import starter.timesync.TimesyncAPIAdmin;
 import starter.timesync.Utils.Constant;
 import starter.timesync.Utils.TimesyncResponse;
 
@@ -17,17 +17,17 @@ import static org.junit.Assert.assertEquals;
 public class SettingStepDef {
 
     @Steps
-    TimesyncAPI timesyncAPI;
+    TimesyncAPIAdmin timesyncAPIAdmin;
 
     @Given("GET setting employees by admin")
     public void getSettingEmployee() {
         SerenityRest.given();
-        timesyncAPI.getSettingEmployees();
+        timesyncAPIAdmin.getSettingEmployees();
     }
 
     @When("Send request get setting employees")
     public void sendRequestEmployees(){
-        SerenityRest.when().get(TimesyncAPI.GET_PUT_SETTING);
+        SerenityRest.when().get(TimesyncAPIAdmin.GET_PUT_SETTING);
     }
 
     @And("Response body message get should be status: \"success show setting\"")
@@ -50,12 +50,12 @@ public class SettingStepDef {
             ", tolerance {string}, annual leave {string}")
     public void editSettingEmployees(String working_hour_start, String working_hour_end, String tolerance,
                                      String annual_leave){
-        timesyncAPI.setUpdateSettingEmployees(working_hour_start, working_hour_end, tolerance, annual_leave);
+        timesyncAPIAdmin.setUpdateSettingEmployees(working_hour_start, working_hour_end, tolerance, annual_leave);
     }
 
     @When("Send request update setting employees")
     public void sendRequestUpdateSetting(){
-        SerenityRest.when().get(TimesyncAPI.GET_PUT_SETTING);
+        SerenityRest.when().get(TimesyncAPIAdmin.GET_PUT_SETTING);
     }
 
     @And("Response body message update setting should be status: \"success show setting\"")

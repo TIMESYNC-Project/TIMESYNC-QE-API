@@ -15,4 +15,5 @@ Feature: Setting Employees
     And Response body message update setting should be status: "success show setting"
     And Validate json schema update setting
     Examples:
-      | start | end | tolerance | annual_leave |
+      | start | end   | tolerance  | annual_leave |
+      | 08:00 | 16:00 | 30 Minutes | 14           |
