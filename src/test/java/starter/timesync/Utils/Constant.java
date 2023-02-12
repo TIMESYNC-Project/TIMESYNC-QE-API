@@ -1,5 +1,4 @@
 package starter.timesync.Utils;
-
 public class Constant {
 
     public static String BASE_URL =  "https://shirayuki.site";// base URL

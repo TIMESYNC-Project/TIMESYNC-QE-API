@@ -1,9 +1,11 @@
-# Getting started with REST API testing with Serenity and Cucumber 6
+# Getting started with Timesync API testing with Serenity and Cucumber 6
 
-This is a simple starter project for Serenity with Cucumber 6 and RestAssured
+This is a starter capstone project (Timesync) for Serenity with Cucumber 6 and RestAssured
 
-## Want to learn more?
-For more information about Serenity BDD, you can read the [**Serenity BDD Book**](https://serenity-bdd.github.io/theserenitybook/latest/index.html), the official online Serenity documentation source. Other sources include:
-* **[Byte-sized Serenity BDD](https://www.youtube.com/channel/UCav6-dPEUiLbnu-rgpy7_bw/featured)** - tips and tricks about Serenity BDD
-* [**Serenity BDD Blog**](https://johnfergusonsmart.com/category/serenity-bdd/) - regular articles about Serenity BDD
-* [**The Serenity Dojo**](https://www.serenity-dojo.com) - Tailored BDD and Test Automation Training and Mentoring
+## Test Case Documentation
+For more testcases by QE, you can read the [**Test Cases WEB and API**]:
+* [Spreadsheets Test Cases WEB and API](https://docs.google.com/spreadsheets/d/1HxAqmecMJeY_3OEHgBNr-HqNXHxOTveYLxnof7V-qPQ/edit#gid=416286152)
+
+## Manual Testing using Postman
+For more about manual API testing by QE, you can follow this link :
+* [API Manual Testing using Postman](https://solar-resonance-268424.postman.co/workspace/7bcfe56a-87e5-466b-a0dd-5c2261e317ad)
