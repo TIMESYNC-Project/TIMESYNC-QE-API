@@ -30,14 +30,12 @@ public class TimesyncAPI {
         String authToken = "Bearer " + token;
         SerenityRest.given().headers("Authorization",authToken);
     }
-
     @Step("Put employee")
     public void setPutEmployees (){
         String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjh9.Tyw9fenvyLJ7FNDlonDjaMfY8-RqKCc7gzeuVf_KF2o";
         String authToken = "Bearer " + token;
         SerenityRest.given().headers("Authorization",authToken);
     }
-
     @Step("Put employee invalid token")
     public void setPutEmployeesInvalidToken () {
         String token = "invalid token";
@@ -70,7 +68,7 @@ public class TimesyncAPI {
                 .contentType(ContentType.JSON)
                 .body(json);
     }
-
+    
     @Step ("Get Attendances with valid token ")
     public void setGetAttendancesEmployee(){
         String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjgyfQ.i6koT9RuTRix_p2948wnXNFm69BturymDo4bsHyySlQ";
@@ -138,7 +136,6 @@ public class TimesyncAPI {
         SerenityRest.given()
                 .headers("Authorization",authToken);
     }
-
     @Step("Get Approvals with invalid token")
     public void setGetApprovalsInvalidToken() {
         String token = "invalid token";
@@ -161,5 +158,28 @@ public class TimesyncAPI {
         String authToken = "Bearer " + token;
         SerenityRest.given()
                 .headers("Authorization",authToken);
+    }
+
+    @Step("Put update setting employee")
+    public void setUpdateSettingEmployees(String working_hour_start, String working_hour_end, String tolerance,
+                                         String annual_leave) {
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                        ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .multiPart("working_hour_start",working_hour_start)
+                .multiPart("working_hour_end",working_hour_end)
+                .multiPart("tolerance",tolerance)
+                .multiPart("annual_leave",annual_leave)
+                .log().all();
+    }
+
+    @Step("Put update approvals employee")
+    public void setUpdaApprovalsEmployee(int id, String approval_status){
+        SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjF9" +
+                        ".-DGQDtU6oq4NIINSqqqlW1FGPfZrPcQBUTdc37CnpcU")
+                .pathParam("id", id)
+                .formParam("file",approval_status)
+                .log().all();
     }
 }
