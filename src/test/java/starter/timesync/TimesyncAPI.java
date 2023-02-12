@@ -1,6 +1,4 @@
 package starter.timesync;
-
-
 import io.restassured.http.ContentType;
 import io.restassured.http.Header;
 import net.serenitybdd.rest.SerenityRest;
@@ -25,7 +23,6 @@ public class TimesyncAPI {
     public static String GET_EMPLOYEE_APPROVALS = Constant.BASE_URL + "/employee/approvals";
     public static String GET_SEARCH_EMPLOYEE = Constant.BASE_URL + "/search";
     public static String GET_RECORD_ID_EMPLOYEE = Constant.BASE_URL + "/record/9?date_from=2023-02-06&date_to=2023-02-09";
-
 
     @Step("Get profile employee")
     public void setGetProfileEmployee() {
@@ -165,5 +162,4 @@ public class TimesyncAPI {
         SerenityRest.given()
                 .headers("Authorization",authToken);
     }
-
 }
