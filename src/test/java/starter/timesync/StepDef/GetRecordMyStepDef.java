@@ -11,15 +11,14 @@ import starter.timesync.Utils.Constant;
 
 import java.io.File;
 
-public class GetRecordMyStepdef {
+public class GetRecordMyStepDef {
     @Steps
     TimesyncAPI timesyncAPI;
-
-    @Given("Get Record with invalid token")
-    public void getRecordWithValidToken() {
-        timesyncAPI.setGetRecordEmployee();
+    @Given("Get Record with token employee and parameter value date_from {string} and date_to {string}")
+    public void getRecordWithTokenEmployeeAndValidParameterValueDate_fromAndDate_to(String date_from, String date_to)
+    {
+        timesyncAPI.setGetRecordWithParam(date_from, date_to);
     }
-
     @When("Send request get record")
     public void sendRequestGetRecord() {
         SerenityRest.when().get(TimesyncAPI.GET_RECORD_ID_EMPLOYEE);
@@ -31,8 +30,9 @@ public class GetRecordMyStepdef {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
-    @Given("Get Record with valid token employee")
-    public void getRecordWithValidTokenEmployee() {
-        timesyncAPI.setGetRecordEmployeeValid();
+    @Given("Get Record with invalid token employee and parameter value date_from {string} and date_to {string}")
+    public void getRecordWithInvalidTokenEmployeeAndParameterValueDate_fromAndDate_to(String date_from, String date_to)
+    {
+        timesyncAPI.setGetRecordWithInvalidToken(date_from, date_to);
     }
 }

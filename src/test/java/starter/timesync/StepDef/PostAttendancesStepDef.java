@@ -14,8 +14,7 @@ public class PostAttendancesStepDef {
     TimesyncAPI timesyncAPI;
     @Given("Post Attendances with valid token")
     public void postAttendancesWithValidToken() {
-        File jsonPostAttendances = new File(Constant.JSON_REQUEST+"/PostAttendances.json");
-        timesyncAPI.setPostAttendancesEmployee(jsonPostAttendances);
+        timesyncAPI.setPostAttendancesEmployee();
     }
 
     @When("Send request post attendances")

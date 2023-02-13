@@ -16,23 +16,13 @@ public class GetAttendancesStepDef {
     @Steps
     TimesyncAPI timesyncAPI;
 
-    @Given("Get attendances employee with valid token")
-    public void getAttendancesEmployeeWithValidToken() {
-        timesyncAPI.setGetAttendancesEmployee();
-    }
-
-    @Given("Get attendances employee with valid token date from {string} and date to {string}")
-    public void getAttendancesEmployeeWithParam(String date_from, String date_to) {
+    @Given("Get attendances employee with token and params value date_from {string} and date_to {string}")
+    public void getAttendancesEmployeeWithParams(String date_from, String date_to) {
         timesyncAPI.setGetAttendancesWithParam(date_from, date_to);
     }
 
-    @When("Send request get attendances with token employee")
-    public void sendRequestGetAttendancesEmployee() {
-        SerenityRest.when().get(TimesyncAPI.GET_ATTENDANCES_EMPLOYEE_2);
-    }
-
-    @When("Send request get attendances with param employee")
-    public void sendRequestGetAttendancesEmployee2() {
+    @When("Send request get attendances")
+    public void sendRequestGetAttendanceWithValidParamsEmployee() {
         SerenityRest.when().get(TimesyncAPI.GET_ATTENDANCES_EMPLOYEE);
     }
 
@@ -40,5 +30,17 @@ public class GetAttendancesStepDef {
     public void validateJSONSchemaGetAttendances() {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/GetAttendancesSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get attendances employee with token and invalid params value date_from {string} and date_to {string}")
+    public void getAttendancesEmployeeWithTokenAndInvalidParamsValueDate_fromAndDate_to(String date_from, String date_to)
+    {
+        timesyncAPI.setGetAttendancesWithParam(date_from, date_to);
+    }
+
+    @Given("Get attendances employee with invalid token and params value date_from {string} and date_to {string}")
+    public void getAttendancesEmployeeWithInvalidTokenAndParamsValueDate_fromAndDate_to(String date_from, String date_to)
+    {
+        timesyncAPI.setGetAttendancesWithInvalidToken(date_from, date_to);
     }
 }

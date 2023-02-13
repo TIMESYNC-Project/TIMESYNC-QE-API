@@ -42,10 +42,10 @@ public class LoginEmployeeStepDef {
     }
 
     @And("Response body message {string}")
-    public void responseBodyMessage(String errorMessage) {
+    public void responseBodyMessage(String Message) {
         SerenityRest.then()
                 .assertThat()
-                .body("message", containsString(errorMessage));
+                .body("message", containsString(Message));
     }
 
     @Given("Login empty nip with invalid JSON")
@@ -66,8 +66,8 @@ public class LoginEmployeeStepDef {
         authApi.postLogin(jsonRequest);
     }
 
-    @Given("Login employee empty data")
-    public void loginEmployeeEmptyData() {
+    @Given("Login employee without fill nip and password")
+    public void loginEmployeeWithoutFillNipPassword() {
         File jsonRequest = new File(Constant.JSON_REQUEST + "/FailedPostLoginEmptyData.json");
         authApi.postLogin(jsonRequest);
     }

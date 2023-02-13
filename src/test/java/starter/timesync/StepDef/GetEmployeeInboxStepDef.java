@@ -30,4 +30,14 @@ public class GetEmployeeInboxStepDef {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/GetEmployeeInboxSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    @Given("Get employee inbox with invalid token")
+    public void getEmployeeInboxWithInvalidToken() {
+        timesyncAPI.setGetEmployeeInboxInvalidToken();
+    }
+
+    @When("Send request get employee inbox invalid path")
+    public void sendRequestGetEmployeeInboxInvalidPath() {
+        SerenityRest.when().get(TimesyncAPI.GET_EMPLOYEE_INBOX_INVALID_PATH);
+    }
 }

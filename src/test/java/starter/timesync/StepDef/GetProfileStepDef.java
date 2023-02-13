@@ -11,6 +11,7 @@ import starter.timesync.TimesyncAPI;
 import starter.timesync.Utils.Constant;
 
 import java.io.File;
+import java.sql.Time;
 
 public class GetProfileStepDef {
     @Steps
@@ -29,5 +30,21 @@ public class GetProfileStepDef {
     public void validateJSONSchemaGetEmployeeProfile() {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/GetEmployeeProfileSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get employee profile without token")
+    public void getEmployeeProfileWithoutToken() {
+        timesyncAPI.setGetProfileEmployeeWithoutToken();
+
+    }
+
+    @Given("Get employee profile invalid token")
+    public void getEmployeeProfileInvalidToken() {
+        timesyncAPI.setGetProfileEmployeeInvalidToken();
+    }
+
+    @When("Send request get profile employee with invalid path")
+    public void sendRequestGetProfileEmployeeInvalidPath() {
+        SerenityRest.when().get(TimesyncAPI.GET_PROFILE_EMPLOYEES_INVALID_PATH);
     }
 }

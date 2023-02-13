@@ -10,6 +10,7 @@ import starter.timesync.TimesyncAPI;
 import starter.timesync.Utils.Constant;
 
 import java.io.File;
+import java.sql.Time;
 
 public class GetEmployeeApprovalsStepDef {
     @Steps
@@ -29,5 +30,21 @@ public class GetEmployeeApprovalsStepDef {
     public void validateJSONSchemaGetEmployeeApprovals() {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/GetEmployeeApprovalsSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get Employee Approvals with invalid token")
+    public void getEmployeeApprovalsWithInvalidToken() {
+        timesyncAPI.setGetEmployeeApprovalsInvalidToken();
+
+    }
+
+    @Given("Get Employee Approvals without token")
+    public void getEmployeeApprovalsWithoutToken() {
+        timesyncAPI.setGetEmployeeApprovalsWithoutToken();
+    }
+
+    @When("Send request get Employee Approvals with invalid path")
+    public void sendRequestGetEmployeeApprovalsWithInvalidPath() {
+        SerenityRest.when().get(TimesyncAPI.GET_EMPLOYEE_APPROVALS_INVALID_PATH);
     }
 }

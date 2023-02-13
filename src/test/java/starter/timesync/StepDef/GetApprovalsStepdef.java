@@ -35,4 +35,14 @@ public class GetApprovalsStepdef {
     public void getApprovalsWithInvalidToken() {
         timesyncAPI.setGetApprovalsInvalidToken();
     }
+
+    @When("Send request get approvals with invalid path")
+    public void sendRequestGetApprovalsWithInvalidPath() {
+        SerenityRest.when().get(TimesyncAPI.GET_APPROVALS_EMPLOYEE_INVALID);
+    }
+
+    @Given("Get approvals without token")
+    public void getApprovalsWithoutToken() {
+        timesyncAPI.setGetApprovalsWithoutToken();
+    }
 }

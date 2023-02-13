@@ -11,7 +11,7 @@ import starter.timesync.Utils.Constant;
 
 import java.io.File;
 
-public class GetAttendancesLocationMyStepdef {
+public class GetAttendancesLocationStepDef {
     @Steps
     TimesyncAPI timesyncAPI;
     @Given("Get attendances location employee with valid token")
@@ -28,5 +28,15 @@ public class GetAttendancesLocationMyStepdef {
     public void validateJSONSchemaGetAttendancesLocation() {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/GetAttendancesLocationSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @When("Send request get attendances location with invalid path")
+    public void sendRequestGetAttendancesLocationInvalidPath() {
+        SerenityRest.when().get(TimesyncAPI.GET_ATTENDANCES_LOCATION_EMPLOYEE_INVALID_PATH);
+    }
+
+    @Given("Get attendances location employee with invalid token")
+    public void getAttendancesLocationEmployeeWithInvalidToken() {
+        timesyncAPI.setGetAttendancesLocationInvalidToken();
     }
 }
