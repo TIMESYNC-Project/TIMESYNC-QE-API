@@ -2,12 +2,10 @@ package starter.timesync;
 
 
 import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.timesync.Utils.Constant;
 
-import java.awt.*;
 import java.io.File;
 
 public class TimesyncAPI {
@@ -240,31 +238,6 @@ public class TimesyncAPI {
     @Step ("Get Employee approvals without token")
     public void setGetEmployeeApprovalsWithoutToken (){
         String token = "";
-        String authToken = "Bearer " + token;
-        SerenityRest.given()
-                .headers("Authorization",authToken);
-    }
-
-    @Step("Get search employee with valid token")
-    public void setGetSearchEmployee(){
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjh9.Tyw9fenvyLJ7FNDlonDjaMfY8-RqKCc7gzeuVf_KF2o";
-        String authToken = "Bearer " + token;
-        SerenityRest.given()
-                .headers("Authorization",authToken);
-    }
-
-
-    @Step("Get Record Employee with valid token")
-    public void setGetRecordEmployeeValid (){
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjh9.Tyw9fenvyLJ7FNDlonDjaMfY8-RqKCc7gzeuVf_KF2o";
-        String authToken = "Bearer " + token;
-        SerenityRest.given()
-                .headers("Authorization",authToken);
-    }
-
-    @Step("Get Record Employee with invalid token")
-    public void setGetRecordEmployee (){
-        String token = "invalid token";
         String authToken = "Bearer " + token;
         SerenityRest.given()
                 .headers("Authorization",authToken);

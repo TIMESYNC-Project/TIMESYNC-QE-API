@@ -11,38 +11,49 @@
             "id": {
               "type": "integer"
             },
-            "employee_name": {
+            "attendance_date": {
               "type": "string"
             },
-            "approval_title": {
+            "clock_in": {
               "type": "string"
             },
-            "approval_start_date": {
+            "clock_in_location": {
               "type": "string"
             },
-            "approval_end_date": {
+            "clock_in_map_location": {
               "type": "string"
             },
-            "approval_status": {
+            "clock_out": {
               "type": "string"
             },
-            "approval_image": {
+            "clock_out_location": {
               "type": "string"
             },
-            "created_at": {
-
+            "clock_out_map_location": {
+              "type": "string"
+            },
+            "attendance": {
+              "type": "string"
+            },
+            "attendance_status": {
+              "type": "string"
+            },
+            "work_time": {
               "type": "string"
             }
           },
           "required": [
             "id",
-            "employee_name",
-            "approval_title",
-            "approval_start_date",
-            "approval_end_date",
-            "approval_status",
-            "approval_image",
-            "created_at"
+            "attendance_date",
+            "clock_in",
+            "clock_in_location",
+            "clock_in_map_location",
+            "clock_out",
+            "clock_out_location",
+            "clock_out_map_location",
+            "attendance",
+            "attendance_status",
+            "work_time"
           ]
         }
       ]
@@ -55,4 +66,5 @@
     "data",
     "message"
   ]
+
 }

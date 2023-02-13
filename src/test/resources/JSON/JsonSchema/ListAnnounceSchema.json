@@ -11,37 +11,25 @@
             "id": {
               "type": "integer"
             },
-            "employee_name": {
+            "nip": {
               "type": "string"
             },
-            "approval_title": {
+            "announcement_title": {
               "type": "string"
             },
-            "approval_start_date": {
-              "type": "string"
-            },
-            "approval_end_date": {
-              "type": "string"
-            },
-            "approval_status": {
-              "type": "string"
-            },
-            "approval_image": {
+            "announcement_description": {
               "type": "string"
             },
             "created_at": {
-
               "type": "string"
             }
           },
           "required": [
             "id",
-            "employee_name",
-            "approval_title",
-            "approval_start_date",
-            "approval_end_date",
-            "approval_status",
-            "approval_image",
+            "to",
+            "nip",
+            "announcement_title",
+            "announcement_description",
             "created_at"
           ]
         }

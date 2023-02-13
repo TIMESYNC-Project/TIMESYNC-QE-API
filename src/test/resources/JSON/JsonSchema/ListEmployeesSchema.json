@@ -11,38 +11,43 @@
             "id": {
               "type": "integer"
             },
-            "employee_name": {
+            "profile_picture": {
               "type": "string"
             },
-            "approval_title": {
+            "name": {
               "type": "string"
             },
-            "approval_start_date": {
+            "birth_of_date": {
               "type": "string"
             },
-            "approval_end_date": {
+            "nip": {
               "type": "string"
             },
-            "approval_status": {
+            "email": {
               "type": "string"
             },
-            "approval_image": {
+            "gender": {
               "type": "string"
             },
-            "created_at": {
-
+            "position": {
               "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "annual_leave": {
+              "type": "integer"
             }
           },
           "required": [
             "id",
-            "employee_name",
-            "approval_title",
-            "approval_start_date",
-            "approval_end_date",
-            "approval_status",
-            "approval_image",
-            "created_at"
+            "profile_picture",
+            "name",
+            "nip",
+            "position"
           ]
         }
       ]
