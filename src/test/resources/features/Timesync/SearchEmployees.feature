@@ -1,4 +1,4 @@
-Feature: Search Employees
+Feature: Search Employees Admin Timesync API
   @Timesync @PositiveCase
   Scenario Outline: Admin can search employees by name
     Given Get search employee with name or nip "<name>"

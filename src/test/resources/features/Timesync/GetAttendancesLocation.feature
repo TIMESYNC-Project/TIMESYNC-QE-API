@@ -1,4 +1,4 @@
-Feature: Get Attendances Location
+Feature: Get Attendances Location Timesync API
   @Timesync @PositiveCase
   Scenario: Get attendances location employee
     Given Get attendances location employee with valid token

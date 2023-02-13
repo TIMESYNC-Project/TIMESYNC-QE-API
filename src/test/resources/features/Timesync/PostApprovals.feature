@@ -1,4 +1,4 @@
-Feature: Post employee approvals
+Feature: Post Employee Approvals Timesync API
   @Timesync @PositiveCase
   Scenario: Post employee approvals with valid JSON
     Given Post employee with valid token and json

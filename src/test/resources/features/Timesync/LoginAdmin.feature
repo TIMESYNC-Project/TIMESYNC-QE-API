@@ -1,4 +1,4 @@
-Feature: Testing Login Admin Timessync API
+Feature: Login Admin Timesync API
   @Timesync @PositiveCase
   Scenario: Post login as an admin
     Given Login admin with valid json

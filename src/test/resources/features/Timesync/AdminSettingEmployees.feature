@@ -1,4 +1,4 @@
-Feature: Setting Employees
+Feature: Setting Employees Admin Timesync API
   @Timesync @PositiveCase
   Scenario: As an admin can see setting employees
     Given GET setting employees by admin

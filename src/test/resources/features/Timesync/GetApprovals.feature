@@ -1,4 +1,4 @@
-Feature: Get Approvals employee
+Feature: Get Employee Approvals Timesync API
   @Timesync @PositiveCase
   Scenario: Get Approvals employee with valid token
     Given Get approvals with valid token

@@ -31,9 +31,9 @@ Feature: Announcements List for Employees
     And Validate json schema announcements unregistered id
     Examples:
       | id  |
-      | 100 |
-      | 101 |
-      | 102 |
-      | 103 |
-      | 104 |
-      | 105 |
+      | 300 |
+      | 301 |
+      | 302 |
+      | 303 |
+      | 304 |
+      | 305 |

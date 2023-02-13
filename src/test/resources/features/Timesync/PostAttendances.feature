@@ -1,4 +1,4 @@
-Feature: Post Attendances
+Feature: Post Attendances Timesync API
   @Timesync @PositiveCase
   Scenario: Post Attendances employee
     Given Post Attendances with valid token

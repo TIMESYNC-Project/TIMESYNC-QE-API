@@ -1,4 +1,4 @@
-Feature: Testing Register Employee Timessync API
+Feature: Register Employee Timesync API
 
   @Timesync @PositiveCase
   Scenario: Post admin register employees success

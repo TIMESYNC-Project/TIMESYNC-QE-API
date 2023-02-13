@@ -1,4 +1,4 @@
-Feature: Get Attendances
+Feature: Get Employee Attendances Timesync API
   @Timesync
   Scenario: Get attendances with valid param
     Given Get attendances employee with valid token date from "2023-02-09" and date to "2023-02-10"

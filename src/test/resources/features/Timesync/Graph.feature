@@ -1,4 +1,4 @@
-Feature: Graph Employees
+Feature: Graph Employees Timesync API
   @Timesync @PositiveCase
   Scenario Outline: Admin can see graph mtwh employees
     Given GET graph by admin with type "<type>", year_month "<ym>", and limit "<lim>"

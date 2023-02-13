@@ -1,4 +1,4 @@
-Feature: Delete Employees
+Feature: Delete Employees Admin Timesync API
   @Timesync @PositiveCase
   Scenario: Admin can delete account employee
     Given DELETE employees by admin with id 84
