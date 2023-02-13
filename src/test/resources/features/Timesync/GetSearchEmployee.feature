@@ -1,4 +1,5 @@
 Feature: Get Search
+  @Timesync @PositiveCase
   Scenario: Get Search employee
     Given Get search employee with valid token
     When Send request get search

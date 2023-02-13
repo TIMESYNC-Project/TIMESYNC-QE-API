@@ -12,8 +12,8 @@ Feature: Setting Employees
     Given PUT Admin update setting employees working hour start "<start>", working hour end "<end>", tolerance "<tolerance>", annual leave "<annual_leave>"
     When Send request update setting employees
     Then Should return status code 200
-    And Response body message update setting should be status: "success show setting"
+    And Response body message update setting should be status: "success change setting"
     And Validate json schema update setting
     Examples:
-      | start | end   | tolerance  | annual_leave |
-      | 08:00 | 16:00 | 30 Minutes | 14           |
+      | start | end   | tolerance | annual_leave |
+      | 08:00 | 16:00 | 30        | 14           |

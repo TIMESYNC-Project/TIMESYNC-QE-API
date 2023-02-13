@@ -30,10 +30,10 @@ Feature: Announcements List for Employees
     And Response body message get should be status: "announcement not found"
     And Validate json schema announcements unregistered id
     Examples:
-      | id |
-      | 60 |
-      | 61 |
-      | 62 |
-      | 63 |
-      | 64 |
-      | 65 |
+      | id  |
+      | 100 |
+      | 101 |
+      | 102 |
+      | 103 |
+      | 104 |
+      | 105 |

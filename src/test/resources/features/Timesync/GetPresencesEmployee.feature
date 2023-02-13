@@ -1,4 +1,5 @@
 Feature: Get Presences
+  @Timesync @PositiveCase
   Scenario: Get presences employee
     Given Get presences employee with valid token
     When Send request get presences employee

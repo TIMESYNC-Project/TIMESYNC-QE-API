@@ -1,4 +1,5 @@
 Feature: Get Attendances Location
+  @Timesync @PositiveCase
   Scenario: Get attendances location employee
     Given Get attendances location employee with valid token
     When Send request get attendances location employee

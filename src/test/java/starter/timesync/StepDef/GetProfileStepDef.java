@@ -25,11 +25,6 @@ public class GetProfileStepDef {
         SerenityRest.when().get(TimesyncAPI.GET_PROFILE_EMPLOYEES);
     }
 
-    @Then("Should return status code {int}")
-    public void shouldReturnStatusCode(int statusCode) {
-        SerenityRest.then().statusCode(statusCode);
-    }
-
     @And("Validate JSON schema get employee profile")
     public void validateJSONSchemaGetEmployeeProfile() {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/GetEmployeeProfileSchema.json");

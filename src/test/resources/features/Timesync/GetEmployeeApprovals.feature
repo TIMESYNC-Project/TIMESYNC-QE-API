@@ -1,4 +1,5 @@
 Feature: Get Employee Approvals
+  @Timesync @PositiveCase
   Scenario: Get Employee Approvals with valid token
     Given Get Employee Approvals with valid token
     When Send request get Employee Approvals

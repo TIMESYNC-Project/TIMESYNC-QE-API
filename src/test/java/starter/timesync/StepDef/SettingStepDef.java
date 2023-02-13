@@ -55,10 +55,10 @@ public class SettingStepDef {
 
     @When("Send request update setting employees")
     public void sendRequestUpdateSetting(){
-        SerenityRest.when().get(TimesyncAPIAdmin.GET_PUT_SETTING);
+        SerenityRest.when().put(TimesyncAPIAdmin.GET_PUT_SETTING);
     }
 
-    @And("Response body message update setting should be status: \"success show setting\"")
+    @And("Response body message update setting should be status: \"success change setting\"")
     public void responseBodyMessageUpdateSetting() {
         String expectedMessage = "success change setting";
         String actualMessage = SerenityRest.then().extract().path(TimesyncResponse.MESSAGE);

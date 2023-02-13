@@ -1,4 +1,5 @@
 Feature: Get Record
+  @Timesync @PositiveCase
   Scenario: Get Record Employee
     Given Get Record with valid token employee
     When Send request get record
@@ -6,6 +7,7 @@ Feature: Get Record
     And Response body message "success show employee attendance record"
     And Validate JSON schema get record
 
+  @Timesync @PositiveCase
   Scenario: Get Record Employee with invalid token
     Given Get Record with invalid token
     When Send request get record

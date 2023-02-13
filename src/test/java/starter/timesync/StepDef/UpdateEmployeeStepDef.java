@@ -41,7 +41,7 @@ public class UpdateEmployeeStepDef {
     //Scenario 2
     @Given("PUT update employee without token data image, id {int}, name {string}, birth_of_date {string}, email {string}, " +
             "gender {string}, position {string}, phone {string}, address {string}, password {string}")
-    public void udateEmployeeWoToken(int id, String name, String birth_of_date, String email, String gender,
+    public void updateEmployeeWoToken(int id, String name, String birth_of_date, String email, String gender,
                                      String position, String phone, String address, String password){
         File image = new File(Constant.IMAGE_REQUEST+"/momonosuke.jpg");
         timesyncAPIAdmin.setPutUpdateWoToken(id, name, birth_of_date , email, gender, position, phone,

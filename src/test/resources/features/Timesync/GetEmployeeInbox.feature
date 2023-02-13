@@ -1,4 +1,5 @@
 Feature: Get Employee Inbox
+  @Timesync @PositiveCase
   Scenario: Get Employee Inbox with valid token employee
     Given Get employee Inbox with valid token
     When Send request get employee Inbox

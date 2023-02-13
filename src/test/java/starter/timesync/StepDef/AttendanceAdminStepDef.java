@@ -54,9 +54,9 @@ public class AttendanceAdminStepDef {
         SerenityRest.when().post(TimesyncAPIAdmin.POST_WO_ATTENDANCE);
     }
 
-    @And("Response body message post attendance employees without id: \"clock in session has ended\"")
+    @And("Response body message post attendance employees without id: \"clock in fail, you already clock in today\"")
     public void responseBodyMessagePostAttendanceWoId(){
-        String expectedMessage = "clock in session has ended";
+        String expectedMessage = "clock in fail, you already clock in today";
         String actualMessage = SerenityRest.then().extract().path(TimesyncResponse.MESSAGE);
         assertEquals(expectedMessage, actualMessage);
     }
