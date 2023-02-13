@@ -14,15 +14,15 @@ Feature: Announcements Admin
     And Response body message post announcements should be status: "send announcement message to employee success"
     And Validate json schema create announcements with nip
     Examples:
-      | nip   | tittle                   | description                         |
-      | 23001 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23002 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23003 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23004 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23005 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23006 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23007 | Graduate Bachelor Degree | Congratulation for you, see on top! |
-      | 23008 | Graduate Bachelor Degree | Congratulation for you, see on top! |
+      | nip   | tittle           | description                         |
+      | 23001 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23002 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23003 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23004 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23005 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23006 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23007 | Graduate Alterra | Congratulation for you, see on top! |
+      | 23008 | Graduate Alterra | Congratulation for you, see on top! |
 
   @Timesync @NegativeCase
   Scenario: Admin add announcements with invalid param

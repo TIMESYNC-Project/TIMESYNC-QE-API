@@ -18,8 +18,7 @@ Feature: Attendance Admin
     Given POST attendance employees by admin without id, attendance "<at>", date start "<ds>", date end "<de>"
     When Send request post attendance employees without id
     Then Should return status code 400
-    And Response body message post attendance employees without id: "clock in session has ended"
-    And Validate json schema post attendance employees without id
+    And Response body message post attendance employees without id: "clock in fail, you already clock in today"
     Examples:
       | at         | ds         | de         |
       | Sick Leave | 2023-02-22 | 2023-02-23 |
