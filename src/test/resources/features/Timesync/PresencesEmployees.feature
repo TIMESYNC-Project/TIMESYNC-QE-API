@@ -1,4 +1,4 @@
-Feature: Presences Employees
+Feature: Presences Employees Timesync API
   @Timesync @PositiveCase
   Scenario: Admin can see presences total
     Given Get presences total employees by admin

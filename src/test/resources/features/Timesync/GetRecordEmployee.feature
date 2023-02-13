@@ -1,4 +1,4 @@
-Feature: Get Record
+Feature: Get Employee Record Timesync API
   @Timesync @PositiveCase
   Scenario: Get Record Employee
     Given Get Record with valid token employee

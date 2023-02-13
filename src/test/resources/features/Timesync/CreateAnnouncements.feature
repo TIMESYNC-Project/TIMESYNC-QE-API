@@ -1,4 +1,4 @@
-Feature: Announcements Admin
+Feature: Announcements Admin Timesync API
   @Timesync @PositiveCase
   Scenario: Admin add announcements to all employees
     Given Post admin create announcements for employee

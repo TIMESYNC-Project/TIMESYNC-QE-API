@@ -1,4 +1,4 @@
-Feature: Approvals Admin
+Feature: Approvals Admin Timesync API
 
   @Timesync @PositiveCase
   Scenario: Admin can see approvals from employees

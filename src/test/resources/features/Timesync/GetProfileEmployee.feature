@@ -1,4 +1,4 @@
-Feature: Get Employee Profile
+Feature: Get Employee Profile Timesync API
   @Timesync @PositiveCase
   Scenario: Get Employee profile with valid token employee
     Given Get employee profile with valid token

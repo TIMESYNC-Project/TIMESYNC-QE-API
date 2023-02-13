@@ -1,4 +1,4 @@
-Feature: Update Employee
+Feature: Edit Employee Admin Timesync API
   @Timesync @PositiveCase
   Scenario: As an admin can update employee
     Given PUT update employee with data image, id 19, name "Kozuki Momonosuke", birth_of_date "2002-11-23", email "", gender "Male", position "Shogun Wano", phone "", address "Bandung", password ""

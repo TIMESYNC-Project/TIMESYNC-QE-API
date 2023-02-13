@@ -1,4 +1,4 @@
-Feature: Delete Announcements Employees
+Feature: Delete Announcements Employees Admin Timesync API
   @Timesync @PositiveCase
   Scenario: Admin can delete announcements employee
     Given DELETE announcements by admin with id 116

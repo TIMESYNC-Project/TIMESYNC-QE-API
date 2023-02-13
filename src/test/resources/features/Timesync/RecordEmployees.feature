@@ -1,4 +1,4 @@
-Feature: Record Employees by Admin
+Feature: Record Employees by Admin Timesync API
   @Timesync @PositiveCase
   Scenario Outline: Admin can see record all employees
     Given GET record employees with id <id>, date from "<df>", and date to "<dt>"

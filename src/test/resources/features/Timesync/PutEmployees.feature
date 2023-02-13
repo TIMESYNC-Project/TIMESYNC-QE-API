@@ -1,4 +1,4 @@
-Feature: Put Employees
+Feature: Put Employees Timesync API
   @Timesync @PositiveCase
   Scenario: Put employees with valid token employee
     Given Put employee with valid token

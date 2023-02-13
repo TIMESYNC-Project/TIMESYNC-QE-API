@@ -1,4 +1,4 @@
-Feature: Put Attendances
+Feature: Put Attendances Timesync API
   @Timesync @PositiveCase
   Scenario: Put Attendances with valid token and json
     Given Put attendances with valid token and json

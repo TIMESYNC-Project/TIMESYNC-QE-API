@@ -1,4 +1,4 @@
-Feature: Company Profiles
+Feature: Company Profiles Admin Timesync API
   @Timesync @PositiveCase
   Scenario: Admin can see company profiles
     Given GET Company profile by admin

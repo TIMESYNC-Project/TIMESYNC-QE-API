@@ -1,4 +1,4 @@
-Feature: Testing List all Employees Timessync API
+Feature: List All Employees Timesync API
   @Timesync @PositiveCase
   Scenario: Get list employees
     Given GET list all employees by admin
