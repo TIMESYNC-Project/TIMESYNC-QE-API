@@ -13,6 +13,7 @@ Feature: Post Attendances
     Then Should return status code 400
     And Response body message "clock in fail, you already clock in today"
 
+  @Timesync @NegativeCase
   Scenario: Post Attendance clock in session has ended
     Given Post Attendances with valid token
     When Send request post attendances
