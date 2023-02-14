@@ -1,4 +1,4 @@
-Feature: Get Presences
+Feature: Get Presences Employees Timesync API
   @Timesync @PositiveCase
   Scenario: Get presences employee
     Given Get presences employee with valid token
