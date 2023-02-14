@@ -72,8 +72,8 @@ public class AdminApprovalStepDef {
     }
     //S3
 
-    @Given("Get approvals without token")
-    public void getApproveWoToken(){
+    @Given("Get admin approvals without token")
+    public void getAdminApproveWoToken(){
         SerenityRest.given();
         timesyncAPIAdmin.getApproveEmployeesWoToken();
     }

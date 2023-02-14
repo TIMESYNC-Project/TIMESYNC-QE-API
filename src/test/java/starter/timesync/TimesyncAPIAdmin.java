@@ -81,6 +81,14 @@ public class TimesyncAPIAdmin {
                 .log().all();
     }
 
+    @Step("Get company profiles")
+    public void getUnauthCompanyProfiles(){
+        SerenityRest.given().headers("Authorization","Bearer gaGalGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                        ".eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjEzNH0" +
+                        ".HpZf0fpva24NyoPr7Gfl0u0HwWUj2aT8mNQ6X8d_N84")
+                .log().all();
+    }
+
     @Step("Get setting employee")
     public void getSettingEmployees(){
         SerenityRest.given().headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +

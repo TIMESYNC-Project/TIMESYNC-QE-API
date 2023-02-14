@@ -18,3 +18,11 @@ Feature: Company Profiles Admin Timesync API
       |              |                    |                                                                                    | Jakarta | +6221-9923-7090 |        |
       | PT Time Sync | timesync@gmail.com |                                                                                    |         |                 |        |
       |              |                    | We are a company that moves in technology and software industry and software house |         |                 |        |
+
+  @Timesync @PositiveCase
+  Scenario: Admin can't see company profiles with unauthorized token
+    Given GET Company profile with unauthorized
+    When Send request get company profiles unauthorized
+    Then Should return status code 401
+    And Response body message get should be status: "invalid or expired jwt"
+    And Validate json schema get company profiles unauthorized token

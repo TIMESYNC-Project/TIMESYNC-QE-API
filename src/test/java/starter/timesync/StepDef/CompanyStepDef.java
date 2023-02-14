@@ -31,7 +31,7 @@ public class CompanyStepDef {
     }
 
     @And("Response body message get should be status: \"success show company profile\"")
-    public void responseBodyMessageGetAnnounceById() {
+    public void responseBodyMessageGetCompany() {
         String expectedMessage = "success show company profile";
         String actualMessage = SerenityRest.then().extract().path(TimesyncResponse.MESSAGE);
         assertEquals(expectedMessage, actualMessage);
@@ -45,6 +45,33 @@ public class CompanyStepDef {
                 .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
+    //Scenario Negative
+
+    @Given("GET Company profile with unauthorized")
+    public void getCompanyProfileUnauthorized(){
+        SerenityRest.given();
+        timesyncAPIAdmin.getUnauthCompanyProfiles();
+    }
+
+    @When("Send request get company profiles unauthorized")
+    public void sendRequestGetCompanyProfilesUnauthorized() {
+        SerenityRest.when().get(TimesyncAPIAdmin.GET_PUT_COMPANY_PROFILES);
+    }
+
+    @And("Response body message get should be status: \"invalid or expired jwt\"")
+    public void responseBodyMessageGetCompanyUnauthorized() {
+        String expectedMessage = "invalid or expired jwt";
+        String actualMessage = SerenityRest.then().extract().path(TimesyncResponse.MESSAGE);
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @And("Validate json schema get company profiles unauthorized token")
+    public void validateJsonSchemaCompanyProfilesUnauth(){
+        File jsonSchema = new File(Constant.JSON_SCHEMA+"/MessageSchema.json");
+        SerenityRest.then()
+                .assertThat()
+                .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
     //Scenario PUT
     @Given("Update company profile with image, set company_name {string}, company_email {string}," +
             "description {string},company_address {string}, company_phone {string}, sosmed {string}")

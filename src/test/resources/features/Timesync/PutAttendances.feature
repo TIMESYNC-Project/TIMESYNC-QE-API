@@ -13,9 +13,10 @@ Feature: Put Attendances
     Then Should return status code 400
     And Response body message "clock out fail, you already clock out today"
 
-    Scenario: Put Attendances dont have clock in data today
-      Given Put attendances with valid token
-      When Send request put attendances
-      Then Should return status code 400
-      And Response body message "you dont have clock in data today,you must clock in first"
+  @Timesync @NegativeCase
+  Scenario: Put Attendances dont have clock in data today
+    Given Put attendances with valid token
+    When Send request put attendances
+    Then Should return status code 400
+    And Response body message "you dont have clock in data today,you must clock in first"
 

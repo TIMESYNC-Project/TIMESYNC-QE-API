@@ -25,7 +25,7 @@ Feature: Approvals Admin Timesync API
 
   @Timesync @NegativeCase
   Scenario: Admin can't see approvals without token
-    Given Get approvals without token
+    Given Get admin approvals without token
     When Send request get approvals employees
     Then Should return status code 400
     And Response body message approvals without token should be status: "missing or malformed jwt"
@@ -41,11 +41,11 @@ Feature: Approvals Admin Timesync API
     And Validate json schema update approvals employees
     Examples:
       | id | status   |
-      | 52 | Approved |
-      | 53 | Rejected |
-      | 54 | Approved |
-      | 55 | Approved |
-      | 56 | Rejected |
+      | 80 | Approved |
+      | 81 | Rejected |
+      | 82 | Approved |
+      | 83 | Approved |
+      | 84 | Rejected |
 
 
   @Timesync @NegativeCase
