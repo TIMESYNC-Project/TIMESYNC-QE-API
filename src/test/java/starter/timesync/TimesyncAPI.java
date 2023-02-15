@@ -50,7 +50,7 @@ public class TimesyncAPI {
 
     @Step("Put employee")
     public void setPutEmployees (){
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjh9.Tyw9fenvyLJ7FNDlonDjaMfY8-RqKCc7gzeuVf_KF2o";
+        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjgyfQ.i6koT9RuTRix_p2948wnXNFm69BturymDo4bsHyySlQ";
         String authToken = "Bearer " + token;
         SerenityRest.given().headers("Authorization",authToken);
     }
@@ -106,7 +106,7 @@ public class TimesyncAPI {
 
     @Step("Put Attendances with valid token and json")
     public void setPutAttendancesEmployee(){
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjEzNH0.HpZf0fpva24NyoPr7Gfl0u0HwWUj2aT8mNQ6X8d_N84";
+        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjgyfQ.i6koT9RuTRix_p2948wnXNFm69BturymDo4bsHyySlQ";
         String authToken = "Bearer " + token;
         SerenityRest.given().headers("Authorization",authToken);
     }
@@ -157,7 +157,7 @@ public class TimesyncAPI {
 
     @Step ("Post Attendances with valid token")
     public void setPostAttendancesEmployee(){
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjEzNH0.HpZf0fpva24NyoPr7Gfl0u0HwWUj2aT8mNQ6X8d_N84";
+        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjgyfQ.i6koT9RuTRix_p2948wnXNFm69BturymDo4bsHyySlQ";
         String authToken = "Bearer " + token;
         SerenityRest.given().headers("Authorization",authToken);
     }

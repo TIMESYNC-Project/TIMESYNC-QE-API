@@ -1,7 +1,7 @@
-Feature: Put Employees
+Feature: Put Employees Timesync API
   @Timesync @PositiveCase
   Scenario: Put update photo and password
-    Given Put update employees image and password "223344"
+    Given Put update employees image and password "112233"
     When Send request put employees
     Then Should return status code 200
     And Response body message "success update employee profile"

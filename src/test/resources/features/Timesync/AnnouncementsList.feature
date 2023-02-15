@@ -14,13 +14,13 @@ Feature: Announcements List for Employees
     And Response body message get should be status: "success get announcement details"
     And Validate json schema announcements by id
     Examples:
-      | id |
-      | 27 |
-      | 28 |
-      | 29 |
-      | 30 |
-      | 31 |
-      | 32 |
+      | id  |
+      | 182 |
+      | 183 |
+      | 184 |
+      | 185 |
+      | 186 |
+      | 187 |
 
   @Timesync @NegativeCase
   Scenario Outline: Admin can't get announcements unregistered id
