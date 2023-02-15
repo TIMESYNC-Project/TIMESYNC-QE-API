@@ -1,4 +1,4 @@
-Feature: Get Record
+Feature: Get Record Employees Timesync API
   @Timesync @PositiveCase
   Scenario: Get Record Employee valid token and valid params value
     Given Get Record with token employee and parameter value date_from "2023-02-09" and date_to "2023-02-10"

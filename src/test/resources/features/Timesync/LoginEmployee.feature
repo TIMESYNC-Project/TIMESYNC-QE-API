@@ -1,4 +1,4 @@
-Feature: Login Employee
+Feature: Login Employee Timesync API
   @Timesync @PositiveCase
   Scenario: Login with valid nip and password
     Given Login with valid JSON

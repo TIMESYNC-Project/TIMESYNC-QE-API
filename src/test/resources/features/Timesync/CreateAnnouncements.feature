@@ -14,15 +14,15 @@ Feature: Announcements Admin Timesync API
     And Response body message post announcements should be status: "send announcement message to employee success"
     And Validate json schema create announcements with nip
     Examples:
-      | nip   | tittle           | description                         |
-      | 23001 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23002 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23003 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23004 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23005 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23006 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23007 | Graduate Alterra | Congratulation for you, see on top! |
-      | 23008 | Graduate Alterra | Congratulation for you, see on top! |
+      | nip   | tittle           | description                                 |
+      | 23001 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23002 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23003 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23004 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23005 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23006 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23007 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
+      | 23008 | Graduate Alterra | Congratulation for you, see on top! (HAPUS) |
 
   @Timesync @NegativeCase
   Scenario: Admin add announcements with invalid param
