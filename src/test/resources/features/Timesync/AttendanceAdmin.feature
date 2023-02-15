@@ -8,10 +8,10 @@ Feature: Attendance Admin Timesync API
     And Validate json schema post attendance employees by admin
     Examples:
       | id | at           | ds         | de         |
-      | 29 | On Leave     | 2023-02-20 | 2023-02-24 |
-      | 30 | Sick Leave   | 2023-02-17 | 2023-02-22 |
-      | 32 | On Leave     | 2023-02-20 | 2023-02-23 |
-      | 36 | Annual Leave | 2023-03-01 | 2023-03-04 |
+      | 69 | On Leave     | 2023-02-20 | 2023-02-24 |
+      | 70 | Sick Leave   | 2023-02-17 | 2023-02-22 |
+      | 71 | On Leave     | 2023-02-20 | 2023-02-23 |
+      | 72 | Annual Leave | 2023-03-01 | 2023-03-04 |
 
   @Timesync @NegativeCase
   Scenario Outline: Admin can't post attendances without id
