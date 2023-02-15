@@ -15,13 +15,13 @@
 
 ## 📝 Reports
 #### Company Profile
-![report-api-login](https://user-images.githubusercontent.com/68207916/)
+![report-api-login](https://user-images.githubusercontent.com/121234492/219103910-5214c5a5-8494-4088-95f5-564fa059d9ed.png)
 
-#### Employee Approvals
-![report-api-register](https://user-images.githubusercontent.com/68207916/)
+#### Approvals Employee
+![report-api-register](https://user-images.githubusercontent.com/121234492/219104493-736a7536-3b26-4ee0-a529-c6a6f7eb5a6b.png)
 
 #### Announcements
-![report-api-chats](https://user-images.githubusercontent.com/68207916/186059526-aa1641ed-12c8-47c1-9eae-e8f9aa9daa73.png)
+![report-api-chats](https://user-images.githubusercontent.com/121234492/219105361-2107d3e7-6aee-41a1-b2fc-e9e66c17e871.png)
 
 <br>
 
